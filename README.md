@@ -1,8 +1,8 @@
 # Python-challenge
 
 In the file of PyBank you will be able to run the code to analyze the data in budget data. 
-You will be returned with the:
-      -Total amount of months analyzed
+You will be returned with:
+      -Total amount of months covered in the data
       -Total amount of money spread across the total months 
       -The average change between months 
       -The greatest increase between 2 months 
@@ -14,6 +14,6 @@ You will be returned with the following data:
        -The precent of votes and number of votes each nominee received
        -The winner of the election 
        
-Both file will produce a text file with the appropriate results as well 
+Both files will produce a text file with the appropriate results as well 
 
       
