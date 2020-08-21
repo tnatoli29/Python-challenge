@@ -64,5 +64,14 @@ print(f"Average Change: ${average_monthly_change:}")
 print(f"Greatest Increase: {best_month}, (${best})")
 print(f"Greatest Decrease: {worst_month}, (${worst})")
 
+#set location of txt file
+output = os.path.join(".", "PyBank", "Resources", "main.text")
 
-
+with open(output, "w",) as txtfile:
+    txtfile.write("Finacial Analysis")
+    txtfile.write("----------------------")
+    txtfile.write(f"Total Months: {total_months}")
+    txtfile.write(f"Total Amount: ${total_amount}")
+    txtfile.write(f"Average Change: ${average_monthly_change:}")
+    txtfile.write(f"Greatest Increase: {best_month}, (${best})")
+    txtfile.write(f"Greatest Decrease: {worst_month}, (${worst})")
