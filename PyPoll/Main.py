@@ -67,7 +67,7 @@ print("---------------------")
 print(f"Winner: {winner_name}")
 
 #set location of txt file
-output = os.path.join("..", "Analysis")
+output = os.path.join( "Analysis")
 
 with open(output, "w",) as txtfile:
     txtfile.write("Election Results\n")
