@@ -43,18 +43,41 @@ with open(csv_poll) as csvfile:
         correy_per = Correy_votes / total_votes
         li_per = Li_votes / total_votes
         otooley_per = OTooley_votes/ total_votes
+#Determine election winner
+        winner = max(Khan_votes, Correy_votes, Li_votes, OTooley_votes)
+        if winner == Khan_votes:
+                winner_name = "Khan"
+        elif winner == Correy_votes:
+                winner_name = "Correy"
+        elif winner == Li_votes:
+                winner_name = "Li"
+        elif winner == OTooley_votes:
+                winner_name = "O'Tooley"
 
 #Print the results
 print("Election Results")
 print("---------------------")
-print(total_votes)
+print(f"Total Votes: {total_votes}")
 print("---------------------")
 print(f"Khan:{khan_per:.3%},({Khan_votes})")
 print(f"Correy:{correy_per:.3%},({Correy_votes})")
 print(f"Li:{li_per:.3%},({Li_votes})")
 print(f"O'Tooley:{otooley_per:.3%},({OTooley_votes})")
 print("---------------------")
+print(f"Winner: {winner_name}")
 
+#set location of txt file
+output = os.path.join("..", "Analysis")
 
-
+with open(output, "w",) as txtfile:
+    txtfile.write("Election Results\n")
+    txtfile.write("---------------------\n")
+    txtfile.write(f"Total Votes: {total_votes}\n")
+    txtfile.write("---------------------\n")
+    txtfile.write(f"Khan:{khan_per:.3%},({Khan_votes})\n")
+    txtfile.write(f"Correy:{correy_per:.3%},({Correy_votes})\n")
+    txtfile.write(f"Li:{li_per:.3%},({Li_votes})\n")
+    txtfile.write(f"O'Tooley:{otooley_per:.3%},({OTooley_votes})\n")
+    txtfile.write("---------------------\n")
+    txtfile.write(f"Winner: {winner_name}\n")
 
