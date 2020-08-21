@@ -65,7 +65,7 @@ print(f"Greatest Increase: {best_month}, (${best})")
 print(f"Greatest Decrease: {worst_month}, (${worst})")
 
 #set location of txt file
-output = os.path.join(".", "PyBank", "Resources", "main.text")
+output = os.path.join("..", "Analysis")
 
 with open(output, "w",) as txtfile:
     txtfile.write("Finacial Analysis")
