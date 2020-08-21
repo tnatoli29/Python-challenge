@@ -36,22 +36,33 @@ with open(csv_budget) as csvfile:
         profit_change = int(row[1]) - previous_month
         monthly_change.append(profit_change)
         previous_month = int(row[1])
-        #month_count.append(row[0])
+        #find the date and amount of the greatest increase of profits
+        if int(row[1]) > greatest_increase:
+            greatest_increase = int(row[1])
+            best_month = row[0]
+        #find the date and amount for the greatest decrease of profits
+        if int(row[1]) < greatest_decrease:
+            greatest_decrease = int(row[1])
+            worst_month = row[0]
 
 
 
 
+
+        worst = min(monthly_change)
+        best = max(monthly_change)
 
     average_monthly_change = (sum(monthly_change) / len(monthly_change))
     average_monthly_change = round(average_monthly_change, 2)
 
 
-
-
+print("Finacial Analysis")
+print("-------------------------")
 print(f"Total Months: {total_months}")
 print(f"Total Amount: ${total_amount}")
 print(f"Average Change: ${average_monthly_change:}")
-#print(f"Greatest Increase: {}")
-#print(f"Greatest Decrease: {}")
+print(f"Greatest Increase: {best_month}, (${best})")
+print(f"Greatest Decrease: {worst_month}, (${worst})")
+
 
 
